@@ -4,11 +4,11 @@ pipeline {
     environment {
         IMAGE_NAME = "lalitha-portfolio"
         CONTAINER_NAME = "portfolio-container"
-        PORT = "8081"      // Changed to avoid Jenkins port conflict
+        PORT = "8081"
     }
 
     options {
-        timestamps()       // Adds timestamps to Jenkins console
+        timestamps()
     }
 
     stages {
@@ -23,10 +23,7 @@ pipeline {
             steps {
                 script {
                     echo "🐳 Building Docker image..."
-                    // Enable colorized logs for this stage
-                    ansiColor('xterm') {
-                        sh "docker build -t ${IMAGE_NAME}:latest ."
-                    }
+                    sh "docker build -t ${IMAGE_NAME}:latest ."
                 }
             }
         }
@@ -45,16 +42,14 @@ pipeline {
             steps {
                 script {
                     echo "🚀 Deploying new Docker container..."
-                    ansiColor('xterm') {
-                        sh "docker run -d -p ${PORT}:80 --name ${CONTAINER_NAME} ${IMAGE_NAME}:latest"
-                    }
+                    sh "docker run -d -p ${PORT}:80 --name ${CONTAINER_NAME} ${IMAGE_NAME}:latest"
                 }
             }
         }
 
         stage('Verify Deployment') {
             steps {
-                echo "🔍 Checking if the container is running..."
+                echo "🔍 Checking container status..."
                 sh "docker ps | grep ${CONTAINER_NAME}"
             }
         }
@@ -62,13 +57,10 @@ pipeline {
 
     post {
         success {
-            echo "\033[1;32m✅ Deployment successful! Portfolio is live at: http://localhost:${PORT}\033[0m"
+            echo "✅ Deployment successful! Portfolio live at: http://localhost:${PORT}"
         }
         failure {
-            echo "\033[1;31m❌ Build or deployment failed. Please check Jenkins logs.\033[0m"
-        }
-        always {
-            echo "📄 Build completed at: ${new Date()}"
+            echo "❌ Build or deployment failed. Please check Jenkins logs."
         }
     }
 }
