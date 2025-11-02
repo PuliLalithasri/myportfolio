@@ -4,12 +4,11 @@ pipeline {
     environment {
         IMAGE_NAME = "lalitha-portfolio"
         CONTAINER_NAME = "portfolio-container"
-        PORT = "8081"      // Changed to avoid conflict with Jenkins
+        PORT = "8081"      // Changed to avoid Jenkins port conflict
     }
 
     options {
-        timestamps()       // Adds timestamps in Jenkins console
-        ansiColor('xterm') // Enables colored log output
+        timestamps()       // Adds timestamps to Jenkins console
     }
 
     stages {
@@ -22,9 +21,12 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                echo "🐳 Building Docker image..."
                 script {
-                    sh "docker build -t ${IMAGE_NAME}:latest ."
+                    echo "🐳 Building Docker image..."
+                    // Enable colorized logs for this stage
+                    ansiColor('xterm') {
+                        sh "docker build -t ${IMAGE_NAME}:latest ."
+                    }
                 }
             }
         }
@@ -41,9 +43,11 @@ pipeline {
 
         stage('Run New Container') {
             steps {
-                echo "🚀 Deploying new Docker container..."
                 script {
-                    sh "docker run -d -p ${PORT}:80 --name ${CONTAINER_NAME} ${IMAGE_NAME}:latest"
+                    echo "🚀 Deploying new Docker container..."
+                    ansiColor('xterm') {
+                        sh "docker run -d -p ${PORT}:80 --name ${CONTAINER_NAME} ${IMAGE_NAME}:latest"
+                    }
                 }
             }
         }
@@ -58,7 +62,7 @@ pipeline {
 
     post {
         success {
-            echo "\033[1;32m✅ Deployment successful! Portfolio is live at http://localhost:${PORT}\033[0m"
+            echo "\033[1;32m✅ Deployment successful! Portfolio is live at: http://localhost:${PORT}\033[0m"
         }
         failure {
             echo "\033[1;31m❌ Build or deployment failed. Please check Jenkins logs.\033[0m"
