@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mandala Art Gallery | Puli Lalithasri</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f3f4f6, #e8f5e9);
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1565c0;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: #bbdefb;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0d47a1;
+      font-size: 2.2rem;
+      margin-top: 40px;
+    }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Lightbox Popup */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      font-size: 2rem;
+      text-decoration: none;
+      padding: 5px 15px;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    .close-btn:hover {
+      background: rgba(255,255,255,0.4);
+      color: #0d47a1;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="hobbies.html">⬅ Back to Hobbies</a>
+  </header>
+
+  <h2>🎨 My Mandala Art Gallery</h2>
+
+  <section class="gallery">
+    <a href="#img1"><img src="images/img1.jpg" alt="Mandala Art 1"></a>
+    <a href="#img2"><img src="images/img2.jpg" alt="Mandala Art 2"></a>
+    <a href="#img3"><img src="images/img3.jpg" alt="Mandala Art 3"></a>
+    <a href="#img4"><img src="images/img4.jpg" alt="Mandala Art 4"></a>
+    <a href="#img5"><img src="images/img5.jpg" alt="Mandala Art 5"></a>
+    <a href="#img6"><img src="images/img6.jpg" alt="Mandala Art 6"></a>
+  </section>
+
+  <!-- Lightbox for each image -->
+  <div id="img1" class="lightbox">
+    <a href="#" class="close-btn">×</a>
+    <img src="images/img1.jpg" alt="Mandala 1">
+  </div>
+
+  <div id="img2" class="lightbox">
+    <a href="#" class="close-btn">×</a>
+    <img src="images/img2.jpg" alt="Mandala 2">
+  </div>
+
+  <div id="img3" class="lightbox">
+    <a href="#" class="close-btn">×</a>
+    <img src="images/img3.jpg" alt="Mandala 3">
+  </div>
+
+  <div id="img4" class="lightbox">
+    <a href="#" class="close-btn">×</a>
+    <img src="images/img4.jpg" alt="Mandala 4">
+  </div>
+
+  <div id="img5" class="lightbox">
+    <a href="#" class="close-btn">×</a>
+    <img src="images/img5.jpg" alt="Mandala 5">
+  </div>
+
+  <div id="img6" class="lightbox">
+    <a href="#" class="close-btn">×</a>
+    <img src="images/img6.jpg" alt="Mandala 6">
+  </div>
+
+  <footer>
+    <a href="index.html">🏠 Back to Home</a>
+  </footer>
+</body>
+</html>
