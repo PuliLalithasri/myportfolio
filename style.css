@@ -1,0 +1,36 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf6ff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(90deg, #9c27b0, #e91e63);
+  color: white;
+  padding: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 30px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-top: 40px;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | Puli Lalithasri</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f3f4f6, #e8f0fe);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1565c0, #1e88e5);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      background: rgba(255,255,255,0.1);
+      padding: 8px 16px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    header nav a:hover {
+      background: white;
+      color: #1565c0;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0d47a1;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #1565c0;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    .project-card {
+      margin-bottom: 30px;
+      padding: 20px;
+      border-left: 6px solid #1e88e5;
+      background: #f8faff;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .project-card b {
+      color: #0d47a1;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0d47a1;
+      color: white;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>🚀 My Projects</h2>
+
+    <div class="project-card">
+      <b>🌱 Plant Disease Recognition</b>
+      <p>Developed a <b>Deep Learning CNN model</b> to detect plant diseases using image processing and <b>GeoIP2</b> for location-based crop health tracking. Helps farmers identify issues early and reduce losses effectively.</p>
+    </div>
+
+    <div class="project-card">
+      <b>📦 My Portfolio Using DevOps</b>
+      <p>A <b>CI/CD-driven personal portfolio project</b> integrating <b>Docker, Jenkins, and GitHub</b> for continuous deployment. Demonstrates complete DevOps lifecycle from code integration to containerized deployment.</p>
+    </div>
+
+    <div class="project-card">
+      <b>🧩 Customer Segmentation Analysis</b>
+      <p>Performed <b>data-driven customer segmentation</b> using <b>Machine Learning (K-Means Clustering)</b> on real-world datasets. Identified unique customer groups based on spending habits and demographics to help businesses optimize marketing and retention strategies.</p>
+    </div>
+
+    <div class="project-card">
+      <b>📋 Autism Spectrum Disorder Detection</b>
+      <p>Created a <b>Machine Learning-based prediction model</b> to assist in early diagnosis of Autism Spectrum Disorder using behavioral and medical data, improving the reliability of early screening tools.</p>
+    </div>
+
+    <div class="project-card">
+      <b>🛒 Book Store Management System</b>
+      <p>Developed a <b>Spring Boot web application</b> for managing book inventory, users, and transactions with an integrated authentication system. Focused on robust CRUD operations and RESTful APIs.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Puli Lalithasri | Designed & Deployed with ❤️ using DevOps Tools</p>
+  </footer>
+</body>
+</html>
