@@ -14,6 +14,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
+                cleanWs()
                 echo "📦 Cloning the repository..."
                 git branch: 'main', url: 'https://github.com/PuliLalithasri/myportfolio.git'
             }
